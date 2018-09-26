@@ -33,9 +33,7 @@ class MainActivity : AppCompatActivity() {
 
     rlNotes.apply {
       layoutManager = LinearLayoutManager(this@MainActivity)
-      adapter = NotesAdapter().also {
-        notesAdapter = it
-      }
+      adapter = NotesAdapter()
     }
 
     fab.setOnClickListener { _ ->

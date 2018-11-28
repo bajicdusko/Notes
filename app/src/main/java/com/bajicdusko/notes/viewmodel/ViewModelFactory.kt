@@ -10,7 +10,7 @@ import com.bajicdusko.notes.domain.usecase.GetAllNotes
  * GitHub @bajicdusko
  */
 class ViewModelFactory(
-    val createNote: CreateNote,
+    private val createNote: CreateNote,
     val getAllNotes: GetAllNotes
 ) : ViewModelProvider.Factory {
   override fun <T : ViewModel?> create(modelClass: Class<T>): T {

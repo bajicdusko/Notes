@@ -1,12 +1,10 @@
 package com.bajicdusko.notes.di
 
-import com.bajicdusko.notes.MainActivity
-import dagger.android.AndroidInjectionModule
-import dagger.android.AndroidInjector
 import android.app.Activity
 import android.content.Context
 import androidx.room.Room
-import com.bajicdusko.notes.BaseNotesApplication
+import com.bajicdusko.notes.MainActivity
+import com.bajicdusko.notes.NotesApplication
 import com.bajicdusko.notes.data.db.NoteDao
 import com.bajicdusko.notes.data.db.NotesDatabase
 import com.bajicdusko.notes.data.repository.DbNotesRepository
@@ -15,6 +13,8 @@ import com.bajicdusko.notes.domain.usecase.GetAllNotes
 import com.bajicdusko.notes.viewmodel.ViewModelFactory
 import dagger.*
 import dagger.android.ActivityKey
+import dagger.android.AndroidInjectionModule
+import dagger.android.AndroidInjector
 import dagger.multibindings.IntoMap
 import javax.inject.Named
 import javax.inject.Singleton
@@ -28,7 +28,7 @@ import javax.inject.Singleton
     modules = [AndroidInjectionModule::class, AppModule::class, UseCaseModule::class, MainActivityModule::class])
 @Singleton
 interface NotesComponent {
-  fun inject(baseNotesApplication: BaseNotesApplication)
+  fun inject(notesApplication: NotesApplication)
 
   @Component.Builder
   interface Builder {
@@ -38,12 +38,12 @@ interface NotesComponent {
 }
 
 @Module
-class AppModule(val baseNotesApplication: BaseNotesApplication) {
+class AppModule(private val notesApplication: NotesApplication) {
 
   @Provides
   @Named("app")
   fun provideAppContext(): Context {
-    return baseNotesApplication
+    return notesApplication
   }
 }
 

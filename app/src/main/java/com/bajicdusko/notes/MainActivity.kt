@@ -11,9 +11,9 @@ import com.bajicdusko.notes.viewmodel.ViewModelFactory
 import com.bajicdusko.notes.viewmodel.createViewModel
 import dagger.android.AndroidInjection
 import kotlinx.android.synthetic.main.activity_main.*
-import kotlinx.android.synthetic.main.content_main.activity_main_rl_notes as rlNotes
 import kotlinx.android.synthetic.main.content_main.fab
 import javax.inject.Inject
+import kotlinx.android.synthetic.main.content_main.activity_main_rl_notes as rlNotes
 
 class MainActivity : AppCompatActivity() {
 
@@ -36,8 +36,10 @@ class MainActivity : AppCompatActivity() {
       adapter = NotesAdapter()
     }
 
-    fab.setOnClickListener { _ ->
-      NewNoteBottomDialogFragment().show(supportFragmentManager, "newNote")
+    fab.setOnClickListener {
+      NewNoteBottomDialogFragment().apply {
+        onAddNoteListener = { noteContent -> onAddNote(noteContent) }
+      }.show(supportFragmentManager, "newNote")
     }
   }
 

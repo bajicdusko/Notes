@@ -28,7 +28,7 @@ class NotesAdapter : RecyclerView.Adapter<NoteViewHolder>() {
 
     val calculateDiff: DiffUtil.DiffResult = DiffUtil.calculateDiff(diffCallback)
 
-
+    this.notes.clear()
     this.notes.addAll(notes)
     calculateDiff.dispatchUpdatesTo(this)
   }
@@ -52,7 +52,7 @@ class NoteViewHolder(view: View) : RecyclerView.ViewHolder(view) {
 
   fun bind(note: Note) {
     tvContent.text = note.content
-    tvTimestamp.text = note.timestamp.prettyTime()
+    tvTimestamp.text = note.timestamp.toString()
   }
 
   companion object {

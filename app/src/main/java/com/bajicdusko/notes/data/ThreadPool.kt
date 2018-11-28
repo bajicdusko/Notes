@@ -2,8 +2,10 @@ package com.bajicdusko.notes.data
 
 import android.os.Handler
 import android.os.Looper
-import java.util.concurrent.*
-import kotlin.concurrent.thread
+import java.util.concurrent.LinkedBlockingQueue
+import java.util.concurrent.ThreadFactory
+import java.util.concurrent.ThreadPoolExecutor
+import java.util.concurrent.TimeUnit
 
 /**
  * Created by Dusko Bajic on 13.09.18.

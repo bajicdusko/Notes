@@ -2,7 +2,6 @@ package com.bajicdusko.notes.viewmodel
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.ViewModel
-import com.bajicdusko.notes.data.repository.DbNotesRepository
 import com.bajicdusko.notes.domain.model.Note
 import com.bajicdusko.notes.domain.model.ResponseWrapper
 import com.bajicdusko.notes.domain.usecase.CreateNote

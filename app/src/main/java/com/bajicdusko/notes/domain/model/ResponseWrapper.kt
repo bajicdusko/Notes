@@ -7,4 +7,3 @@ package com.bajicdusko.notes.domain.model
 class ResponseWrapper<D>(var data: D? = null, var error: Throwable? = null)
 
 fun <D> wrappedData(dataFn: () -> D) = ResponseWrapper(data = dataFn())
-fun <D> wrappedError(errorFn: () -> Throwable) = ResponseWrapper<D>(error = errorFn())

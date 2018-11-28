@@ -3,22 +3,18 @@ package com.bajicdusko.notes.data.repository
 import androidx.arch.core.executor.testing.InstantTaskExecutorRule
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
-import androidx.lifecycle.Observer
 import com.bajicdusko.notes.ThreadPoolExecutorRule
 import com.bajicdusko.notes.anyNotNull
 import com.bajicdusko.notes.data.db.NoteDao
 import com.bajicdusko.notes.data.db.model.NoteDb
 import com.bajicdusko.notes.domain.model.Note
 import com.bajicdusko.notes.domain.model.ResponseWrapper
-import com.bajicdusko.notes.mock
-import com.bajicdusko.notes.testExecutor
 import org.junit.Assert
 import org.junit.Rule
 import org.junit.Test
 import org.junit.runner.RunWith
-import org.mockito.ArgumentMatcher
-import org.mockito.ArgumentMatchers
-import org.mockito.Mockito.*
+import org.mockito.Mockito.doReturn
+import org.mockito.Mockito.mock
 import org.mockito.junit.MockitoJUnitRunner
 import java.util.*
 

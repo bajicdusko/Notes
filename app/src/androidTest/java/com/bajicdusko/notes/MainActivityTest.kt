@@ -6,7 +6,6 @@ import androidx.test.espresso.assertion.ViewAssertions.matches
 import androidx.test.espresso.matcher.ViewMatchers.*
 import androidx.test.rule.ActivityTestRule
 import androidx.test.runner.AndroidJUnit4
-import org.junit.Assert.*
 import org.junit.Rule
 import org.junit.Test
 import org.junit.runner.RunWith
@@ -31,11 +30,11 @@ class MainActivityTest {
   }
 
   @Test
-  fun mainActivity_givenPopedUpInputForm_shouldDisplayErrorOnEmptyNote(){
+  fun mainActivity_givenPoppedUpInputForm_shouldDisplayErrorOnEmptyNote(){
     onView(withId(R.id.fab)).perform(click())
     onView(withId(R.id.new_note_dialog_fragment_til_content)).check(matches(isDisplayed()))
     onView(withId(R.id.new_note_dialog_fragment_btn_add)).perform(click())
-    onView(withText(R.string.noteMustNotbeEmpty)).check(matches(isDisplayed()))
+    onView(withText(R.string.noteMustNotBeEmpty)).check(matches(isDisplayed()))
   }
 
   @Test
@@ -43,7 +42,7 @@ class MainActivityTest {
     onView(withId(R.id.fab)).perform(click())
     onView(withId(R.id.new_note_dialog_fragment_til_content)).check(matches(isDisplayed()))
 
-    onView(withId(R.id.new_note_dialog_fragment_tiet_content))
+    onView(withId(R.id.new_note_dialog_fragment_content))
         .perform(typeText("This is my new note"))
         .perform(pressBack())
 

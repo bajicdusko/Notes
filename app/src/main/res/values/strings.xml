@@ -1,8 +1,7 @@
 <resources>
   <string name="app_name">My Notes</string>
-  <string name="action_settings">Settings</string>
   <string name="remember_something">Remember something</string>
   <string name="add_note">Add Note</string>
-  <string name="noteMustNotbeEmpty">Note must not be empty</string>
+  <string name="noteMustNotBeEmpty">Note must not be empty</string>
   <string name="new_note">New Note</string>
 </resources>

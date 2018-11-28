@@ -8,4 +8,4 @@ import java.util.*
  * GitHub @bajicdusko
  */
 
-fun Date.prettyTime() = PrettyTime().format(this)
+fun Date.prettyTime(): String = PrettyTime().format(this)

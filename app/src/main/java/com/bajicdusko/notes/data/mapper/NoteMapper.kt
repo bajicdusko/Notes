@@ -19,11 +19,3 @@ fun List<NoteDb>.asNotes(): List<Note> {
   }
   return notes
 }
-
-fun List<Note>.asNoteDbs(): List<NoteDb> {
-  val noteDbs = mutableListOf<NoteDb>()
-  forEach {
-    noteDbs.add(it.asDb())
-  }
-  return noteDbs
-}

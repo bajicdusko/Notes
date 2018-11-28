@@ -20,7 +20,7 @@ class NoteDaoTest {
   @Rule
   val instantExecutorRule = InstantTaskExecutorRule()
 
-  lateinit var notesDatabase: NotesDatabase
+  private lateinit var notesDatabase: NotesDatabase
 
   @Before
   fun setUp() {
